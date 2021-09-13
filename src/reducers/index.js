@@ -1,8 +1,6 @@
 import { combineReducers } from "redux";
 import { UPDATE_TIME } from "../actions";
 
-const now = new Date();
-
 const initialClockState = {
   hours: 0,
   minutes: 0,

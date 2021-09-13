@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { updateTime } from "../../actions";
 import ClockUI from "./clock.presenter";
@@ -6,7 +6,6 @@ import ClockUI from "./clock.presenter";
 const Clock = () => {
   const dispatch = useDispatch();
   const clockState = useSelector((state) => state.clockState);
-  const isToolTipVisible = useState("none");
 
   useEffect(() => {
     const time = setInterval(() => {
