@@ -1,19 +1,18 @@
 import styled from "styled-components";
 
 export const Tooltip = styled.span`
-  display: inline-block;
-  color: deeppink;
-  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 `;
 
 export const ToolTipText = styled.span`
-  display: none;
   position: absolute;
-  max-width: 300px;
-  border: 1px solid;
-  border-radius: 5px;
+  top: 120px;
+  visibility: hidden;
+  background-color: red;
   padding: 5px;
-  font-size: 0.8em;
-  color: white;
-  background: deeppink;
+  opacity: 0;
+  transition: all 0.5s;
 `;

@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const Clock = styled.div`
+  display: inline-block;
   position: relative;
   border: 10px solid orange;
   width: 50vw;
@@ -8,6 +9,12 @@ export const Clock = styled.div`
   margin: 0 auto;
   background-color: black;
   border-radius: 100%;
+  &:hover {
+    & + span {
+      visibility: visible;
+      opacity: 0.8;
+    }
+  }
 `;
 
 export const ClockFace = styled.div`
@@ -53,4 +60,22 @@ export const Seconds = styled.div`
   transform: ${(props) => `rotate(${props.value}deg)`};
   transition: ${(props) =>
     props.value > 0 ? "transform 250ms ease-in-out" : "none"};
+`;
+
+export const Tooltip = styled.span`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const ToolTipText = styled.span`
+  position: absolute;
+  top: 700px;
+  visibility: hidden;
+  background-color: red;
+  padding: 5px;
+  opacity: 0;
+  transition: all 0.5s;
+  font-size: 30px;
 `;
