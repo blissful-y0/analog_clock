@@ -1,10 +1,12 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { updateTime } from "../../actions";
+import ClockUI from "./clock.presenter";
 
 const Clock = () => {
   const dispatch = useDispatch();
   const clockState = useSelector((state) => state.clockState);
+  const isToolTipVisible = useState("none");
 
   useEffect(() => {
     const time = setInterval(() => {
@@ -15,8 +17,7 @@ const Clock = () => {
     };
   }, [dispatch]);
 
-  console.log(clockState);
-  return <div>adsfasdfasdf</div>;
+  return <ClockUI clockState={clockState} />;
 };
 
 export default Clock;
